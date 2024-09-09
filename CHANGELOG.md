@@ -6,6 +6,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## Unreleased
 
+## 1.0.0 - 2024.09.09
+
 ### Added
   - Setting up the Project ([#1](https://github.com/impulse-interactive/playground/pull/1))
     - Added Repository files ([19b7070](https://github.com/impulse-interactive/playground/commit/19b7070))
