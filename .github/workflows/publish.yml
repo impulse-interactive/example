@@ -5,9 +5,9 @@ on:
       types: [published]
 
 jobs:
-  verify:
-    name: Publish Package to Registry
-    runs-on: ubuntu-latest
+  publish:
+    name: Publish Package
+    runs-on: macos-latest
     permissions:
         contents: write
     steps:

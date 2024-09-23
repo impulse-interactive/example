@@ -6,9 +6,9 @@ on:
       - master
 
 jobs:
-  verify:
-    name: Create Release Draft
-    runs-on: ubuntu-latest
+  release:
+    name: Release Draft
+    runs-on: macos-latest
     permissions:
         contents: write
     outputs:
@@ -27,19 +27,19 @@ jobs:
           result-encoding: string
           script: |
             try {
-              const package = require('./package.json');
-              const version = package.version;
-              core.setOutput('version', version);
-              console.log("Package version:", version);
+                const package = require("./package.json");
+                const version = package.version;
+                core.setOutput("version", version);
+                console.log("Package version:", version);
             } catch(error) {
-              core.setFailed(error)
+                core.setFailed(error)
             }
-      - name: Create Release Draft
+      - name: Release Draft
         uses: ncipollo/release-action@v1
         with:
           tag: ${{ steps.parse_package.outputs.version }}
           draft: true
-          prerelease: true
+          prerelease: false
           allowUpdates: true
           updateOnlyUnreleased: true
           skipIfReleaseExists: true
